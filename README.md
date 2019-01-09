@@ -1,2 +1,2 @@
 # myNote
-public note for review
+个人阅读笔记仓库。
