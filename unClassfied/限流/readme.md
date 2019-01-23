@@ -2,12 +2,15 @@
 阅读《来谈谈限流》（https://github.com/farmerjohngit/myblog/issues/18?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io）有所收获，记录
 
 ##限流种类
+
 ###1.并发数限流
+
 维护与一个线程安全的当前连接数就行。
 这里可以用JDK并发包中的信号量去实现
 nginx采用的应该是该方式
 
 ###2.QPS限流
+
 - 计数器
 grant方法，判断指定时间间隔内，请求数是否超过上限。
 计数器与并发数计数本质类似；并发数限流中，一个计数 +1 的生命周期是[收到请求，请求结束]，计数器方法则是所有请求的生命周期为指定的时间间隔interval。
